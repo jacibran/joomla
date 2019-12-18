@@ -1,0 +1,15 @@
+Para comenzar a trabajar:
+
+service apache2 start
+service mysql start
+
+sudo mysql -e "CREATE DATABASE bd CHARACTER SET utf8 COLLATE utf8_Spanish_ci;"
+sudo mysql -e "CREATE USER 'usuario'@'bd' identified by 'contraseña';"
+sudo mysql -e "GRANT ALL PRIVILEGES ON bd.* to 'usuario' IDENTIFIED BY 'contraseña';"
+sudo mysql -e "FLUSH PRIVILEGES;" 
+
+service apache2 restart
+service mysql restart
+
+En usuario poner el usuario que desee
+En bd poner base de datos que desee
